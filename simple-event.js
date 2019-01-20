@@ -1,4 +1,4 @@
-var proto = (obj) => {
+let proto = (obj) => {
   obj.listeners = {};
   obj.on = (e, cb) => {
     if (obj.listeners.hasOwnProperty(e)) {
@@ -18,7 +18,7 @@ var proto = (obj) => {
   return obj;
 };
 
-var obj = proto({ name: 'Alice', age: 30 });
+let obj = proto({ name: 'Alice', age: 30 });
 obj.on('ageChange' , () => {
   console.log('Age changed');
   return obj.age;
